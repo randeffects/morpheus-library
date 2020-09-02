@@ -55,7 +55,7 @@ InstallHaProxy(){
       tar -xzf "/tmp/$PACKAGE_NAME" -C /usr/src/haproxy --strip-components=1
 
       #build haproxy
-      make -C /usr/src/haproxy TARGET=linux2628 USE_PCRE=1 PCREDIR= USE_OPENSSL=1 USE_ZLIB=1 all install-bin
+      make -C /usr/src/haproxy TARGET=linux-glibc USE_PCRE=1 PCREDIR= USE_OPENSSL=1 USE_ZLIB=1 USE_LIBCRYPT=1 USE_SYSTEMD=1 all install-bin
       mkdir -p /usr/local/etc/haproxy
       cp -R /usr/src/haproxy/examples/errorfiles /usr/local/etc/haproxy/errors
       rm -rf /usr/src/haproxy
