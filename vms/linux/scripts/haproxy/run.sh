@@ -9,7 +9,7 @@ installDependencies(){
 
    centos|rhel|ol)
     yum -y update openssl
-    yum -y install pcre-devel openssl-devel
+    yum -y install pcre-devel openssl-devel systemd-devel
     yum -y install perl gcc make
     ;;
    
